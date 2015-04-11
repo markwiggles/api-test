@@ -59,9 +59,9 @@ describe 'test GET tests' do
            }.to_json,
           {'Accept' => Mime::JSON, 'Content-Type' => Mime::JSON.to_s}
 
-        puts "LOCATION: #{response.location}"
-        puts "BODY: #{response.body}"
-        puts "STATUS: #{response.status}"
+        # puts "LOCATION: #{response.location}"
+        # puts "BODY: #{response.body}"
+        # puts "STATUS: #{response.status}"
         response.status.should eq 204
         response.content_type.should eq Mime::JSON
         user = json(response.body)
