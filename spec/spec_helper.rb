@@ -20,6 +20,10 @@ def json(body)
   JSON.parse(body, symbolize_names: true)
 end
 
+def encode_credentials(name, password)
+  ActionController::HttpAuthentication::Basic.encode_credentials(name,password)
+end
+
 RSpec.configure do |config|
   # ## Mock Framework
   #
@@ -47,6 +51,10 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
+
+  config.treat_symbols_as_metadata_keys_with_true_values = true
+  config.filter_run focus: true
+  config.run_all_when_everything_filtered = true
 
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and

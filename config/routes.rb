@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   end
 
-  post 'users/' => 'users#create', :as => 'user'
+  # post 'users/' => 'users#create', :as => 'user'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
